@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'weather/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather Forecast</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Get Forecast</button>
+      </form>
+      {% if weather_data %}
+      <h2>{{ weather_data.city }}</h2>
+      <p>Temperature: {{ weather_data.temperature }}°C</p>
+      <p>Time: {{ weather_data.time }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
