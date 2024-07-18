@@ -5,7 +5,7 @@ body {
 .container {
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -13,9 +13,6 @@ h1 {
   color: #007bff;
 }
 
-#weather-data {
-  background-color: #e9ecef;
-  padding: 10px;
-  border-radius: 5px;
-  font-family: "Courier New", Courier, monospace;
+.form-control {
+  width: 300px;
 }
